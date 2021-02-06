@@ -11,3 +11,5 @@ This series consist of 8 parts covering -
 6) Extracting data from Table ​ 
 7) Updating Table Records  
 8) Deleting Table Records 
+
+Please check the text file for various DB operation included in the main folder section-wise.
