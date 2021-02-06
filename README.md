@@ -1,7 +1,7 @@
 # MySQL-Python
 Learn how to use mysql database through Python code to perform various database operations.
 
-This series consist of 8 parts covering -
+This series consist of 8 parts covering :-
 
 1) Database Connectivity 
 2) Creating Database 
