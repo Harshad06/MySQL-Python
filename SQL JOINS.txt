@@ -1,0 +1,100 @@
+
+SQL JOINS Queries:- 
+---------------------------------
+Tables := Orders and Customers
+
+---------------------------------
+JOIN/Inner Join:
+---------------------------------
+TheBadTutorial:-
+SELECT t.id, t.title, t.duration
+		ti.views, ti.likes, ti.shares
+FROM tutorial AS t
+JOIN tutorial_info AS ti
+ON t.id = t.tutorial_id ;
+
+
+SELECT t.id, t.title, t.duration
+		ti.views, ti.likes, ti.shares
+FROM tutorial AS t, tutorial_info AS ti
+WHERE t.id = ti.tutorial_id;
+
+w3schools:-
+SELECT o.OrderID, o.OrderDate,c.CustomerName
+FROM Orders AS o, Customers AS c
+WHERE c.CustomerName = 'xyz' AND o.CustomerID = c.CustomerID;
+
+
+SELECT o.OrderID, o.OrderDate,c.CustomerName
+FROM Orders AS o, Customers AS c
+WHERE c.CustomerName LIKE 'W%' AND o.CustomerID = c.CustomerID;
+
+
+---------------------------------
+GROUP BY Clause:-
+SQL Tutorial - 30: Using GROUP BY Clause with SQL JOINS
+---------------------------------
+SELECT t.subject , SUM(ti.views) AS 'Total Views',
+SUM(ti.likes) AS 'Total Likes'
+FROM tutorial AS t
+JOIN tutorial_info AS ti
+ON t.id = ti.tutorial_id
+GROUP BY t.subject;
+
+
+---------------------------------
+LEFT OUTER JOIN-
+---------------------------------
+SELECT t.subject , SUM(ti.views) AS 'Total Views',
+SUM(ti.likes) AS 'Total Likes'
+FROM tutorial AS t
+LEFT JOIN tutorial_info AS ti
+ON t.id = ti.tutorial_id
+GROUP BY t.subject;
+
+
+---------------------------------
+RIGHT OUTER JOIN-
+---------------------------------
+SELECT t.subject , SUM(ti.views) AS 'Total Views',
+SUM(ti.likes) AS 'Total Likes'
+FROM tutorial AS t
+RIGHT JOIN tutorial_info AS ti
+ON t.id = ti.tutorial_id
+GROUP BY t.subject;
+
+
+FUNCTIONS
+---------------------------------
+ABS() Function-
+---------------------------------
+SELECT t.title
+ABS(ti.likes - ti.dislikes) AS 'Difference in Likes and Dislikes'
+FROM tutorial AS t
+JOIN tutorial_info AS ti
+ON t.id - ti.tutorial_id;
+
+
+---------------------------------
+ROUND() Function-
+---------------------------------
+SELECT t.subject, ROUND(AVG(ti.likes)) AS 'Round of to nearest decimal'
+FROM tutorial AS t
+JOIN tutorial_info AS ti
+ON t.id - ti.tutorial_id
+GROUP BY t.subject;
+
+
+---------------------------------
+DIV() and MOD() Function-
+---------------------------------
+SELECT title, duration DIV 1 AS minutes,
+ROUND(duration*60 MOD 60) AS seconds
+FROM tutorial;
+
+
+
+
+
+
+
